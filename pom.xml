@@ -832,6 +832,7 @@
     <module>contrib</module>
     <module>exec</module>
     <module>sqlparser</module>
+    <module>jdbc-all</module>
     <module>distribution</module>
   </modules>
 </project>
