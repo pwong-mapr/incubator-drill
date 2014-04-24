@@ -87,7 +87,9 @@
                   <outputDirectory>${project.build.directory}</outputDirectory>
                 </artifactItem>
               </artifactItems>
+              <overWriteReleases>true</overWriteReleases>
               <overWriteSnapshots>true</overWriteSnapshots>
+              <useBaseVersion>true</useBaseVersion>
             </configuration>
           </execution>
         </executions>
