@@ -122,7 +122,7 @@
           <injar>drill-sqlparser-${baseDrillVersion}.jar</injar>
           <outjar>${project.build.finalName}-dirty.jar</outjar>
           <outputDirectory>${project.build.directory}</outputDirectory>
-          <infilter>!**.java,!META-INF/*.SF,!META-INF/*.RSA,!META-INF/*.DSA</infilter>
+          <inFilter>!**.java,!META-INF/*.SF,!META-INF/*.RSA,!META-INF/*.DSA</inFilter>
           <maxMemory>6g</maxMemory>
           <options>
             <option>-verbose</option>
