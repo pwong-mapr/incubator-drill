@@ -157,6 +157,12 @@
             <option>-keep class org.apache.drill.jdbc.Driver { *; }</option>
             <option>-keep class org.apache.drill.jdbc.DrillJdbc40Factory { *; }</option>
             <option>-keep class org.apache.drill.jdbc.DrillJdbc41Factory { *; }</option>
+            <option>-keep class org.apache.drill.common.config.CommonConstants { *; }</option>
+            <option>-keep class org.apache.drill.common.config.ConfigProvider { *; }</option>
+            <option>-keep class org.apache.drill.common.config.DrillConfig { *; }</option>
+            <option>-keep class org.apache.drill.common.config.NestedConfig { *; }</option>
+            <option>-keep class * implements com.fasterxml.jackson.databind.cfg.ConfigFeature { *; }</option>
+            <option>-keep class * implements com.fasterxml.jackson.databind.jsontype.TypeIdResolver { *; }</option>
           </options>
           <libs>
             <lib>${java.home}/lib/rt.jar</lib>
