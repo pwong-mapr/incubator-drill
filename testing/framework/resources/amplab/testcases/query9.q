@@ -1,0 +1,1 @@
+SELECT sourceIP,sum(adRevenue) as totalRevenue,avg(pageRank) as pageRank FROM rankings R JOIN (SELECT sourceIP, destURL, adRevenue FROM uservisits UV WHERE UV.visitDate::date > '1980-01-01' AND UV.visitDate::date < '2010-01-01') NUV ON (R.pageURL = NUV.destURL) GROUP BY sourceIP ORDER BY totalRevenue DESC LIMIT 1;

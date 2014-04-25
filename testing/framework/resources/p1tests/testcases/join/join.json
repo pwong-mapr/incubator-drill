@@ -1,0 +1,31 @@
+{
+    "testId": "join",
+    "type": "group",
+    "description": "Test join queries via sqlline",
+    "categories": [
+        "smoke",
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.drillTestDir.p1tests",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+            "mode": "cp",
+            "src": "p1tests/datasources/student.parquet",
+            "dest": "p1tests/student/student.parquet"
+        },
+        {
+            "mode": "cp",
+            "src": "p1tests/datasources/voter.parquet",
+            "dest": "p1tests/voter/voter.parquet"
+        }
+    ]
+}

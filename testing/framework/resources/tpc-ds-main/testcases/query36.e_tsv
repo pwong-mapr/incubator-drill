@@ -1,0 +1,100 @@
+-.43022261			2	1
+-.44688205	Electronics		1	1
+-.43993972	Home		1	2
+-.43718295	Shoes		1	3
+-.43215743	Children		1	4
+-.43004281	Women		1	5
+-.42822278	Books		1	6
+-.42674328	Sports		1	7
+-.42336276	Music		1	8
+-.42199985	Men		1	9
+-.41520531	Jewelry		1	10
+-.40940402			1	11
+-1.8860871	Books		0	1
+-.52365103	Books	entertainments	0	2
+-.49627923	Books	home repair	0	3
+-.46879831	Books	fiction	0	4
+-.46808714	Books	parenting	0	5
+-.45596421	Books	self-help	0	6
+-.44327634	Books	mystery	0	7
+-.44045197	Books	travel	0	8
+-.43156953	Books	arts	0	9
+-.4245235	Books	computers	0	10
+-.41486636	Books	business	0	11
+-.40220195	Books	history	0	12
+-.38719713	Books	science	0	13
+-.38610392	Books	romance	0	14
+-.38263598	Books	sports	0	15
+-.38028948	Books	cooking	0	16
+-.37422436	Books	reference	0	17
+-1.8107933	Children		0	1
+-.45512712	Children	toddlers	0	2
+-.44204583	Children	newborn	0	3
+-.42560536	Children	school-uniforms	0	4
+-.40593802	Children	infants	0	5
+-.54667233	Electronics	karoke	0	1
+-.53923405	Electronics	camcorders	0	2
+-.51215719	Electronics	scanners	0	3
+-.51021786	Electronics	personal	0	4
+-.50955138	Electronics	wireless	0	5
+-.45609815	Electronics	portable	0	6
+-.44342661	Electronics	musical	0	7
+-.43973898	Electronics	automotive	0	8
+-.43607333	Electronics	stereo	0	9
+-.43338512	Electronics	disk drives	0	10
+-.41382652	Electronics	monitors	0	11
+-.40895892	Electronics	televisions	0	12
+-.39850531	Electronics	cameras	0	13
+-.39785759	Electronics	audio	0	14
+-.39069343	Electronics	dvd/vcr players	0	15
+-.37138277	Electronics	memory	0	16
+-.50706652	Home	bathroom	0	1
+-.48955378	Home	kids	0	2
+-.48425225	Home	rugs	0	3
+-.47934792	Home	flatware	0	4
+-.47563986	Home	mattresses	0	5
+-.47407388	Home	blinds/shades	0	6
+-.47253369	Home	glassware	0	7
+-.47056743	Home		0	8
+-.46362522	Home	wallpaper	0	9
+-.45721299	Home	tables	0	10
+-.44984013	Home	decor	0	11
+-.43475168	Home	accent	0	12
+-.39909522	Home	lighting	0	13
+-.38665538	Home	bedding	0	14
+-.38136571	Home	paint	0	15
+-.3737256	Home	furniture	0	16
+-.37370216	Home	curtains/drapes	0	17
+-.76387878	Jewelry		0	1
+-.57675678	Jewelry	consignment	0	2
+-.46125921	Jewelry	estate	0	3
+-.45749999	Jewelry	jewelry boxes	0	4
+-.4374482	Jewelry	gold	0	5
+-.43287441	Jewelry	costume	0	6
+-.42348688	Jewelry	rings	0	7
+-.42268903	Jewelry	birdal	0	8
+-.4076068	Jewelry	diamonds	0	9
+-.39824646	Jewelry	womens watch	0	10
+-.395757	Jewelry	bracelets	0	11
+-.39571675	Jewelry	custom	0	12
+-.39118194	Jewelry	earings	0	13
+-.3899234	Jewelry	loose stones	0	14
+-.3760985	Jewelry	mens watch	0	15
+-.36321724	Jewelry	semi-precious	0	16
+-.35959442	Jewelry	pendants	0	17
+-1.0697841	Men		0	1
+-.44932092	Men	shirts	0	2
+-.41391373	Men	pants	0	3
+-.41271513	Men	sports-apparel	0	4
+-.40607678	Men	accessories	0	5
+-.44711286	Music	classical	0	1
+-.44011364	Music	rock	0	2
+-.4209936	Music	pop	0	3
+-.39183712	Music	country	0	4
+-.26802983	Music		0	5
+-.96521059	Shoes		0	1
+-.45325453	Shoes	mens	0	2
+-.44936906	Shoes	womens	0	3
+-.43491638	Shoes	kids	0	4
+-.40922186	Shoes	athletic	0	5
+-.53856946	Sports		0	1

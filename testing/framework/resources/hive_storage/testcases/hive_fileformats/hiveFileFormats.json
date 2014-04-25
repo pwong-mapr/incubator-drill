@@ -1,0 +1,71 @@
+{
+    "testId": "hiveFileFormats",
+    "type": "group",
+    "description": "Test hive file formats and queries",
+    "categories": [
+        "smoke"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "hive",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/episodes.avro",
+        "dest": "hive_storage/episodes/episodes.avro"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/doctors.avro",
+        "dest": "hive_storage/doctors/doctors.avro"
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/avro_nullable.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/avro_partitioned.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/hive_avro.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/orc_complex.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/sequenceFileFormat.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/sequenceInput.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/rcFileFormat.q",
+       "dest": ""
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/alltypes.q",
+       "dest": ""
+    }                            
+   ]
+}

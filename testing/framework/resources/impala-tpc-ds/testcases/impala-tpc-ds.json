@@ -1,0 +1,21 @@
+{
+    "testId": "impala-tpc-ds",
+    "type": "group",
+    "description": "Test impala tpc-ds queries via jdbc",
+    "categories": [
+        "smoke",
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.drillTestDir.impala-tpc-ds",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+    ]
+}

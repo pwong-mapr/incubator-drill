@@ -1,0 +1,1 @@
+SELECT SUBSTRING(sourceIP, 1, 10), SUM(adRevenue) FROM uservisits GROUP BY SUBSTRING(sourceIP, 1, 10);

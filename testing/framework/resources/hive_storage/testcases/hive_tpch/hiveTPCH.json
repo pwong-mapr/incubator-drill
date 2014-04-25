@@ -1,0 +1,66 @@
+{
+    "testId": "hiveTPCH",
+    "type": "group",
+    "description": "Test tpch hive queries",
+    "categories": [
+        "smoke"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.sql",
+            "schema": "hive",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/customer.tbl",
+        "dest": "hive_storage/customer/customer.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/lineitem.tbl",
+        "dest": "hive_storage/customer/lineitem.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/nation.tbl",
+        "dest": "hive_storage/nation/nation.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/orders.tbl",
+        "dest": "hive_storage/orders/orders.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/part.tbl",
+        "dest": "hive_storage/part/part.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/partsupp.tbl",
+        "dest": "hive_storage/partsupp/partsupp.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/region.tbl",
+        "dest": "hive_storage/region/region.tbl"
+    },
+    {
+        "mode": "cp",
+        "src": "hive_storage/datasources/supplier.tbl",
+        "dest": "hive_storage/supplier/supplier.tbl"
+    },
+    {
+       "mode": "gen",
+       "src": "hive_storage/datasources/execHive.sh resources/hive_storage/datasources/hive_dll_modified.q",
+       "dest": ""
+    }
+   ]
+}

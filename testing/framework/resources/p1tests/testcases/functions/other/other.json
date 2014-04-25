@@ -1,0 +1,31 @@
+{
+    "testId": “other-function”,
+    "type": "group",
+    "description": "Test other function queries via sqlline",
+    "categories": [
+        "smoke",
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "cp",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+            "mode": "cp",
+            "src": "p1tests/datasources/student.parquet",
+            "dest": "student.parquet"
+        },
+        {
+            "mode": "cp",
+            "src": "p1tests/datasources/voter.parquet",
+            "dest": "voter.parquet"
+        }
+    ]
+}

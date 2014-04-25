@@ -1,0 +1,18 @@
+why hello there	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+another record	98	4	101	9999999	false	99.89	9.0E-8	beta	Earth101	1134falsewazzup	RED	\N	BAUGBw==	BGVm
+third record	45	5	102	999999999	true	89.99	9.0E-14	alphagamma	Earth237Bob723	102falseBNL	GREEN	\N	AQIDBAUG	B2hp
+\N	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	\N	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	\N	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	\N	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	\N	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	\N	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	true	\N	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	true	42.43	\N	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	\N	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	\N	17trueAbe Linkedin	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	\N	BLUE	72	AQID	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	\N	72	AQID	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	\N	AQID	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	\N	AWJj
+string	42	3	100	1412341	true	42.43	85.23423424	alphabetagamma	Earth42Bob31Control86	17trueAbe Linkedin	BLUE	72	AQID	\N

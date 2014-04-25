@@ -1,0 +1,21 @@
+{
+    "testId": "tpc-ds-main",
+    "type": "group",
+    "description": "Test tpc-ds main queries via jdbc",
+    "categories": [
+        "smoke",
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs.drillTestDir.tpc-ds-main",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+    ]
+}
