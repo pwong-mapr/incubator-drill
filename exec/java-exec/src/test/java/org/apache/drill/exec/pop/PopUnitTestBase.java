@@ -21,6 +21,7 @@ import java.io.IOException;
 
 import org.apache.drill.common.config.DrillConfig;
 import org.apache.drill.common.util.FileUtils;
+import org.apache.drill.exec.ExecTest;
 import org.apache.drill.exec.exception.FragmentSetupException;
 import org.apache.drill.exec.physical.PhysicalPlan;
 import org.apache.drill.exec.physical.base.PhysicalOperator;
@@ -37,22 +38,17 @@ import org.junit.rules.Timeout;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 
-public abstract class PopUnitTestBase {
+public abstract class PopUnitTestBase  extends ExecTest{
   static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(PopUnitTestBase.class);
-  
-  // Determine if we are in Eclipse Debug mode.
-  static final boolean IS_DEBUG = java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().indexOf("-agentlib:jdwp") > 0;
-  protected static DrillConfig CONFIG;
 
-  // Set a timeout unless we're debugging.
-  @Rule public TestRule globalTimeout = IS_DEBUG ? new TestName() : new Timeout(500000);
+  protected static DrillConfig CONFIG;
 
   @BeforeClass
   public static void setup() {
     CONFIG = DrillConfig.create();
   }
 
-  
+
   public static int getFragmentCount(Fragment b) {
     int i = 1;
     for (ExchangeFragmentPair p : b) {

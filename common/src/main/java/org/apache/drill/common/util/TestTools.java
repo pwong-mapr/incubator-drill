@@ -21,10 +21,7 @@ import java.nio.file.Paths;
 
 import org.junit.rules.TestName;
 import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
 import org.junit.rules.Timeout;
-import org.junit.runner.Description;
-import org.slf4j.Logger;
 
 public class TestTools {
   static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(TestTools.class);
@@ -45,33 +42,5 @@ public class TestTools {
     return WORKING_PATH;
   }
 
-  public static TestLogReporter getTestLogReporter(final Logger logger) {
-    return new TestLogReporter(logger);
-  }
 
-  public static class TestLogReporter extends TestWatcher{
-    private int failureCount = 0;
-
-    final Logger logger;
-
-    public TestLogReporter(Logger logger) {
-      super();
-      this.logger = logger;
-    }
-
-    @Override
-    protected void failed(Throwable e, Description description) {
-      logger.error("Test Failed: " + description.getDisplayName(), e);
-      failureCount++;
-    }
-
-    @Override
-    public void succeeded(Description description) {
-      logger.info("Test Succeeded: " + description.getDisplayName());
-    }
-
-    public void sleepIfFailure() throws InterruptedException{
-      if(failureCount > 0) Thread.sleep(2000);
-    }
-  }
 }

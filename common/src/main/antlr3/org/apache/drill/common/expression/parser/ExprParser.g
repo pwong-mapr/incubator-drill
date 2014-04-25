@@ -73,7 +73,12 @@ parse returns [LogicalExpression e]
 functionCall returns [LogicalExpression e]
   :  Identifier OParen exprList? CParen {$e = FunctionCallFactory.createExpression($Identifier.text, pos($Identifier), $exprList.listE);  }
   ;
-  
+
+convertCall returns [LogicalExpression e]
+  :  Convert OParen expression Comma String CParen
+      { $e = FunctionCallFactory.createConvert($Convert.text, $String.text, $expression.e, pos($Convert));}
+  ;
+
 castCall returns [LogicalExpression e]
 	@init{
   	  List<LogicalExpression> exprs = new ArrayList<LogicalExpression>();
@@ -272,14 +277,14 @@ xorExpr returns [LogicalExpression e]
   ;
   
 unaryExpr returns [LogicalExpression e]
-  :  Minus atom {$e = FunctionCallFactory.createExpression("u-", pos($atom.start), $atom.e); }
+  :  sign=(Plus|Minus)? Number {$e = ValueExpressions.getNumericExpression($sign.text, $Number.text, pos(($sign != null) ? $sign : $Number)); }
+  |  Minus atom {$e = FunctionCallFactory.createExpression("u-", pos($atom.start), $atom.e); }
   |  Excl atom {$e= FunctionCallFactory.createExpression("!", pos($atom.start), $atom.e); }
   |  atom {$e = $atom.e; }
   ;
 
 atom returns [LogicalExpression e]
-  :  Number {$e = ValueExpressions.getNumericExpression($Number.text, pos($atom.start)); }
-  |  Bool {$e = new ValueExpressions.BooleanExpression( $Bool.text, pos($atom.start)); }
+  :  Bool {$e = new ValueExpressions.BooleanExpression($Bool.text, pos($atom.start)); }
   |  lookup {$e = $lookup.e; }
   ;
 
@@ -299,6 +304,7 @@ arraySegment returns [PathSegment seg]
 
 lookup returns [LogicalExpression e]
   :  functionCall {$e = $functionCall.e ;}
+  | convertCall {$e = $convertCall.e; }
   | castCall {$e = $castCall.e; }
   | pathSegment {$e = new SchemaPath($pathSegment.seg, pos($pathSegment.start) ); }
   | String {$e = new ValueExpressions.QuotedString($String.text, pos($String) ); }
