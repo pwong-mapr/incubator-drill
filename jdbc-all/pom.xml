@@ -120,9 +120,8 @@
           <obfuscate>false</obfuscate>
           <includeDependencyInjar>true</includeDependencyInjar>
           <injar>drill-sqlparser-${baseDrillVersion}.jar</injar>
-          <outjar>${project.build.finalName}.jar</outjar>
+          <outjar>${project.build.finalName}-dirty.jar</outjar>
           <outputDirectory>${project.build.directory}</outputDirectory>
-          <inFilter>!**.java,!META-INF/*.SF,!META-INF/*.RSA,!META-INF/*.DSA</inFilter>
           <maxMemory>6g</maxMemory>
           <options>
             <option>-verbose</option>
@@ -136,6 +135,38 @@
             <lib>${java.home}/lib/jsse.jar</lib>
           </libs>
         </configuration>
+      </plugin>
+    
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <delete dir="dirty"/>
+                <mkdir dir="dirty"/>
+                <unzip src="${project.build.directory}/${project.build.finalName}-dirty.jar" dest="dirty"/>
+                <delete>
+                  <fileset dir="dirty">
+                    <include name="**/*.SF"/>
+                    <include name="**/*.RSA"/>
+                    <include name="**/*.DSA"/>
+                    <include name="META-INF/*.SF"/>
+                    <include name="META-INF/*.RSA"/>
+                    <include name="META-INF/*.DSA"/>
+                  </fileset>
+                </delete>
+                <jar destfile="${project.build.directory}/${project.build.finalName}.jar" basedir="dirty"/>
+                <delete dir="dirty"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
     </plugins>
