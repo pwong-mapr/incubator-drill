@@ -120,7 +120,7 @@
           <obfuscate>false</obfuscate>
           <includeDependencyInjar>true</includeDependencyInjar>
           <injar>drill-sqlparser-${baseDrillVersion}.jar</injar>
-          <outjar>${project.build.finalName}-dirty.jar</outjar>
+          <outjar>${project.build.finalName}.jar</outjar>
           <outputDirectory>${project.build.directory}</outputDirectory>
           <inFilter>!**.java,!META-INF/*.SF,!META-INF/*.RSA,!META-INF/*.DSA</inFilter>
           <maxMemory>6g</maxMemory>
@@ -137,38 +137,7 @@
           </libs>
         </configuration>
       </plugin>
-      <!--
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <configuration>
-              <target>
-                <jar destfile="${project.build.directory}/${project.build.finalName}.jar">
-                  <restrict>
-                    <not>
-                      <name name="META-INF/*.SF"/>
-                      <name name="META-INF/*.RSA"/>
-                      <name name="META-INF/*.DSA"/>
-                    </not>
-                    <archives>
-                      <zips>
-                        <fileset dir="${project.build.directory}" includes="/${project.build.finalName}-dirty.jar"/>
-                      </zips>
-                    </archives>
-                  </restrict>
-                </jar>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      -->
+
     </plugins>
   </build>
 
