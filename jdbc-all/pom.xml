@@ -129,6 +129,8 @@
             <option>-dontoptimize</option>
             <option>-ignorewarnings</option>
             <option>-keep class org.apache.drill.jdbc.Driver { *; }</option>
+            <option>-keep class org.apache.drill.jdbc.DrillJdbc40Factory { *; }</option>
+            <option>-keep class org.apache.drill.jdbc.DrillJdbc41Factory { *; }</option>
           </options>
           <libs>
             <lib>${java.home}/lib/rt.jar</lib>
