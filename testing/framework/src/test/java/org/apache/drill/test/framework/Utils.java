@@ -94,7 +94,7 @@ public class Utils {
   }
 
   /**
-   * Constructs absolute path for a file. If the file starts with "/", it is
+   * Constructs resolved path for a file. If the file starts with "/", it is
    * assumed to already be an absolute path.
    * 
    * @param filename
@@ -103,11 +103,11 @@ public class Utils {
    *          name of property to resolve absolute path from.
    * @return absolute path for a file.
    */
-  public static String toAbsolutePath(String filename, String propertyKey) {
+  public static String toResovedPath(String filename, String propertyKey) {
     if (filename.startsWith("/")) {
       return filename;
     }
-    return System.getProperty("user.dir") + "/"
-        + Utils.getDrillTestProperties().get(propertyKey) + "/" + filename;
+    return Utils.getDrillTestProperties().get(propertyKey) + "/"
+        + filename;
   }
 }

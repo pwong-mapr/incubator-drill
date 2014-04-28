@@ -163,8 +163,8 @@ public class JsonTestDataProcessor {
     for (int i = 0; i < jsonArray.length(); i++) {
       JSONObject item = (JSONObject) jsonArray.get(i);
       list.add(new TestCaseModeler().new DataSource(item.getString("mode"),
-          Utils.toAbsolutePath(item.getString("src"), "DRILL_TEST_DATA_DIR"),
-          item.getString("dest") == null ? "" : Utils.toAbsolutePath(
+          Utils.toResovedPath(item.getString("src"), "DRILL_TEST_DATA_DIR"),
+          item.getString("dest") == null ? "" : Utils.toResovedPath(
               item.getString("dest"), "DRILL_TESTDATA")));
     }
     return list;

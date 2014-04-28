@@ -41,14 +41,8 @@ public class JsonTestDataProvider {
 
   /**
    * Constructs an iteration of test case definitions from various test data
-   * sources, obtained from the mvn command line option. A sample command
-   * follows:
-   * 
-   * mvn clean test
-   * -Dtest=org.apache.drill.test.framwork.DrillTestsMapRCluster
-   * #testDrillBasicQueries
-   * -Dtest.def.sources=/root/open-source-drill-test/org.apache
-   * .drill.test/drilltests/resources/basic_query
+   * sources, obtained from the mvn command line option. See README.md for more
+   * details.
    * 
    * @param context
    *          test context which contains all the information for a given test
@@ -77,8 +71,7 @@ public class JsonTestDataProvider {
     }
     List<Object[]> data = new ArrayList<Object[]>();
     for (String testDefSource : testDefSources) {
-      testDefSource = Utils
-          .toAbsolutePath(testDefSource, "DRILL_TEST_DATA_DIR");
+      testDefSource = Utils.toResovedPath(testDefSource, "DRILL_TEST_DATA_DIR");
       File testDefSourceFile = new File(testDefSource);
       JsonTestDataProcessor processor = null;
       List<File> testDefFiles = searchFiles(testDefSourceFile, ".*.json");
