@@ -30,6 +30,12 @@
       <groupId>org.apache.drill</groupId>
       <artifactId>drill-common</artifactId>
       <version>${baseDrillVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javassist</groupId>
+          <artifactId>javassist</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.drill.exec</groupId>
