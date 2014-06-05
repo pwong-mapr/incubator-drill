@@ -19,6 +19,7 @@
   </parent>
 
   <artifactId>tpch-sample-data</artifactId>
+  <version>${drill.version}</version>
   <name>contrib/data/tpch-sample-data</name>
   <packaging>jar</packaging>
 
