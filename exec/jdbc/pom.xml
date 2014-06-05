@@ -18,6 +18,7 @@
     <version>1.0.0-m2-incubating-SNAPSHOT</version>
   </parent>
   <artifactId>drill-jdbc</artifactId>
+  <version>${drill.version}</version>
   <name>exec/JDBC Driver using dependencies</name>
 
   <dependencies>

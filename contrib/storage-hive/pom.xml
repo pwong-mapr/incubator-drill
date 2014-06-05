@@ -27,6 +27,7 @@
   </parent>
 
   <artifactId>storage-hive</artifactId>
+  <version>${drill.version}</version>
   <packaging>jar</packaging>
   <name>contrib/storage-hive</name>
 
@@ -145,7 +146,7 @@
                 <artifactItem>
                   <groupId>org.apache.drill.contrib</groupId>
                   <artifactId>storage-hive</artifactId>
-                  <version>${project.version}</version>
+                  <version>${drill.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
                   <outputDirectory>${project.build.directory}/classes</outputDirectory>

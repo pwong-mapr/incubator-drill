@@ -25,6 +25,7 @@
   </parent>
 
   <artifactId>drill-sqlline</artifactId>
+  <version>${drill.version}</version>
   <name>contrib/sqlline</name>
 
   <dependencies>

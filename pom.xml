@@ -27,6 +27,9 @@
   <name>Apache Drill Root POM</name>
 
   <properties>
+    <drill.base.version>1.0.0-m2-incubating</drill.base.version>
+    <drill.snapshot>-SNAPSHOT</drill.snapshot>
+    <drill.version>${drill.base.version}${profile.string}${drill.snapshot}</drill.version>
     <target.gen.source.path>${project.basedir}/target/generated-sources</target.gen.source.path>
     <proto.cas.path>${project.basedir}/src/main/protobuf/</proto.cas.path>
     <dep.junit.version>4.11</dep.junit.version>
@@ -103,7 +106,6 @@
   </issueManagement>
 
   <build>
-
     <plugins>
       <plugin>
         <groupId>org.apache.rat</groupId>
@@ -550,6 +552,9 @@
           <name>!alt-hadoop</name>
         </property>
       </activation>
+      <properties>
+      	<profile.string></profile.string>
+      </properties>
       <dependencyManagement>
         <dependencies>
           <dependency>
@@ -640,6 +645,7 @@
       <properties>
         <alt-hadoop>mapr</alt-hadoop>
         <rat.excludeSubprojects>true</rat.excludeSubprojects>
+        <profile.string>-mapr</profile.string>
       </properties>
       <dependencyManagement>
         <dependencies>
@@ -768,6 +774,7 @@
       <id>cdh</id>
       <properties>
         <alt-hadoop>cdh4</alt-hadoop>
+        <profile.string>-cdh</profile.string>
       </properties>
       <dependencyManagement>
         <dependencies>
@@ -795,6 +802,7 @@
       <id>hdp</id>
       <properties>
         <alt-hadoop>hdp</alt-hadoop>
+        <profile.string>-hdp</profile.string>
       </properties>
       <dependencyManagement>
         <dependencies>

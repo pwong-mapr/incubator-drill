@@ -19,6 +19,7 @@
   </parent>
 
   <artifactId>distribution</artifactId>
+  <version>${drill.version}</version>
   <packaging>pom</packaging>
   <name>Packaging and Distribution Assembly</name>
 

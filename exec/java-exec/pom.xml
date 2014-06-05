@@ -18,6 +18,7 @@
     <version>1.0.0-m2-incubating-SNAPSHOT</version>
   </parent>
   <artifactId>drill-java-exec</artifactId>
+  <version>${drill.version}</version>
   <name>exec/Java Execution Engine</name>
 
   <dependencies>

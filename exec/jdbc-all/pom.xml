@@ -18,7 +18,7 @@
     <version>1.0.0-m2-incubating-SNAPSHOT</version>
   </parent>
   <artifactId>drill-jdbc-all</artifactId>
-  <version>${projectVersion}</version>
+  <version>${drill.version}</version>
   <name>JDBC JAR with all dependencies</name>
   
   <dependencies>
@@ -221,39 +221,5 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-  
-  <properties>
-    <baseDrillVersion>1.0.0-m2-incubating-SNAPSHOT</baseDrillVersion>
-  </properties>
-
-  <profiles>
-    <profile>
-      <id>default-hadoop</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <projectVersion>${baseDrillVersion}</projectVersion>
-      </properties>
-    </profile>
-    <profile>
-      <id>mapr</id>
-      <properties>
-        <projectVersion>mapr-${baseDrillVersion}</projectVersion>
-      </properties>
-    </profile>
-    <profile>
-      <id>cdh</id>
-      <properties>
-        <projectVersion>cdh-${baseDrillVersion}</projectVersion>
-      </properties>
-    </profile>
-    <profile>
-      <id>hdp</id>
-      <properties>
-        <projectVersion>hdp-${baseDrillVersion}</projectVersion>
-      </properties>
-    </profile>
-  </profiles>
 
 </project>

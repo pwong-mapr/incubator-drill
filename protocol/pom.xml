@@ -27,6 +27,7 @@
   </parent>
 
   <artifactId>drill-protocol</artifactId>
+  <version>${drill.version}</version>
   <packaging>jar</packaging>
   <name>Drill Protocol</name>
 

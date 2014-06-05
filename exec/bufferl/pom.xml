@@ -19,7 +19,7 @@
   </parent>
 
   <artifactId>drill-buffers</artifactId>
-
+  <version>${drill.version}</version>
   <name>exec/Netty Little Endian Buffers</name>
 
   <dependencies>
