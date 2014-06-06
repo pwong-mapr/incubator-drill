@@ -106,19 +106,27 @@ public class FragmentExecutor implements Runnable, CancelableQuery, StatusProvid
       }
 
       root.stop();
+      if(context.isFailed()) {
+        internalFail(context.getFailureCause());
+      }
 
       closed = true;
 
       context.close();
-    }catch(Exception ex){
+    }catch(AssertionError | Exception ex){
       logger.debug("Caught exception while running fragment", ex);
       internalFail(ex);
     }finally{
       Thread.currentThread().setName(originalThread);
-      if(!closed) try{
-        context.close();
-      }catch(RuntimeException e){
-        logger.warn("Failure while closing context in failed state.", e);
+      if(!closed) {
+        try {
+          if(context.isFailed()) {
+            internalFail(context.getFailureCause());
+          }
+          context.close();
+        } catch (RuntimeException e) {
+          logger.warn("Failure while closing context in failed state.", e);
+        }
       }
     }
     logger.debug("Fragment runner complete. {}:{}", context.getHandle().getMajorFragmentId(), context.getHandle().getMinorFragmentId());

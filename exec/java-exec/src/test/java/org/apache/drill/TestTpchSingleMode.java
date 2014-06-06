@@ -49,7 +49,6 @@ public class TestTpchSingleMode extends BaseTestQuery{
   }
 
   @Test
-  @Ignore // DRILL-534
   public void tpch04() throws Exception{
     testSingleMode("queries/tpch/04.sql");
   }
@@ -65,19 +64,16 @@ public class TestTpchSingleMode extends BaseTestQuery{
   }
 
   @Test
-  @Ignore // DRILL-516
   public void tpch07() throws Exception{
     testSingleMode("queries/tpch/07.sql");
   }
 
   @Test
-  @Ignore // DRILL-516
   public void tpch08() throws Exception{
     testSingleMode("queries/tpch/08.sql");
   }
 
   @Test
-  @Ignore // DRILL-516
   public void tpch09() throws Exception{
     testSingleMode("queries/tpch/09.sql");
   }
@@ -99,7 +95,6 @@ public class TestTpchSingleMode extends BaseTestQuery{
   }
 
   @Test
-  @Ignore // DRILL-548 flapping test: issues with writerIndex.
   public void tpch13() throws Exception{
     testSingleMode("queries/tpch/13.sql");
   }
@@ -110,7 +105,7 @@ public class TestTpchSingleMode extends BaseTestQuery{
   }
 
   @Test
-  @Ignore // Fails with CannotPlanException
+  @Ignore //
   public void tpch15() throws Exception{
     testSingleMode("queries/tpch/15.sql");
   }
@@ -121,7 +116,7 @@ public class TestTpchSingleMode extends BaseTestQuery{
   }
 
   @Test
-  @Ignore // DRILL-517
+  @Ignore //
   public void tpch17() throws Exception{
     testSingleMode("queries/tpch/17.sql");
   }
@@ -138,7 +133,6 @@ public class TestTpchSingleMode extends BaseTestQuery{
   }
 
   @Test
-  @Ignore // DRILL-517
   public void tpch20() throws Exception{
     testSingleMode("queries/tpch/20.sql");
   }

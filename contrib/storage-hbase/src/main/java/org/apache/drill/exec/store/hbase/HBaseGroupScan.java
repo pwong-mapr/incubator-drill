@@ -123,6 +123,7 @@ public class HBaseGroupScan extends AbstractGroupScan implements DrillHBaseConst
     this.storagePlugin = that.storagePlugin;
     this.storagePluginConfig = that.storagePluginConfig;
     this.hTableDesc = that.hTableDesc;
+    this.filterPushedDown = that.filterPushedDown;
   }
 
   @Override
@@ -360,8 +361,7 @@ public class HBaseGroupScan extends AbstractGroupScan implements DrillHBaseConst
   @JsonIgnore
   public PhysicalOperator getNewWithChildren(List<PhysicalOperator> children) {
     Preconditions.checkArgument(children.isEmpty());
-    //TODO return copy of self
-    return this;
+    return new HBaseGroupScan(this);
   }
 
   @JsonIgnore

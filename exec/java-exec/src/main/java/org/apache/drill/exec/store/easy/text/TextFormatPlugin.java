@@ -90,7 +90,7 @@ public class TextFormatPlugin extends EasyFormatPlugin<TextFormatPlugin.TextForm
 
     options.put("extension", ((TextFormatConfig)getConfig()).getExtensions().get(0));
 
-    RecordWriter recordWriter = new DrillTextRecordWriter();
+    RecordWriter recordWriter = new DrillTextRecordWriter(context.getAllocator());
     recordWriter.init(options);
 
     return recordWriter;
@@ -139,5 +139,10 @@ public class TextFormatPlugin extends EasyFormatPlugin<TextFormatPlugin.TextForm
   @Override
   public int getWriterOperatorType() {
     return CoreOperatorType.TEXT_WRITER_VALUE;
+  }
+
+  @Override
+  public boolean supportsPushDown() {
+    return true;
   }
 }

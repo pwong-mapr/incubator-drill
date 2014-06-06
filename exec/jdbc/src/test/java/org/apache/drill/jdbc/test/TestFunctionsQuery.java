@@ -17,28 +17,14 @@
  */
 package org.apache.drill.jdbc.test;
 
-import java.lang.Exception;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.Statement;
-import java.util.concurrent.TimeUnit;
 
-import org.apache.drill.common.util.TestTools;
-import org.apache.drill.exec.store.hive.HiveTestDataGenerator;
 import org.apache.drill.jdbc.Driver;
-import org.apache.drill.jdbc.JdbcTest;
-import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestRule;
-
-import com.google.common.base.Function;
-import com.google.common.base.Stopwatch;
 
 public class TestFunctionsQuery {
 
@@ -467,4 +453,49 @@ public class TestFunctionsQuery {
             "DEC_38=3.00000\n");
   }
 
+  @Test
+  public void testSignFunction() throws Exception {
+    String query = "select sign(cast('1.23' as float)) as SIGN_FLOAT, sign(-1234.4567) as SIGN_DOUBLE, sign(23) as SIGN_INT " +
+        "from cp.`employee.json` where employee_id < 2";
+
+    JdbcAssert.withNoDefaultSchema()
+        .sql(query)
+        .returns(
+            "SIGN_FLOAT=1; " +
+            "SIGN_DOUBLE=-1; " +
+            "SIGN_INT=1\n");
+  }
+
+  @Test
+  @Ignore
+  public void testToTimeStamp() throws Exception {
+    String query = "select to_timestamp(cast('800120400.12312' as decimal(38, 5))) as DEC38_TS, to_timestamp(200120400) as INT_TS " +
+        "from cp.`employee.json` where employee_id < 2";
+
+    DateTime result1 = new DateTime(800120400123l);
+    DateTime result2 = new DateTime(200120400000l);
+    DateTimeFormatter f = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZZ");
+    JdbcAssert.withNoDefaultSchema()
+        .sql(query)
+        .returns(
+            "DEC38_TS=" + f.print(result1)+ "; " +
+            "INT_TS=" + f.print(result2) + "\n");
+  }
+
+  @Test
+  public void testPadFunctions() throws Exception {
+    String query = "select rpad(first_name, 10) as RPAD_DEF, rpad(first_name, 10, '*') as RPAD_STAR, lpad(first_name, 10) as LPAD_DEF, lpad(first_name, 10, '*') as LPAD_STAR, " +
+        "lpad(first_name, 2) as LPAD_TRUNC, rpad(first_name, 2) as RPAD_TRUNC " +
+        "from cp.`employee.json` where employee_id = 1";
+
+    JdbcAssert.withNoDefaultSchema()
+        .sql(query)
+        .returns(
+            "RPAD_DEF=Sheri     ; " +
+            "RPAD_STAR=Sheri*****; " +
+            "LPAD_DEF=     Sheri; " +
+            "LPAD_STAR=*****Sheri; " +
+            "LPAD_TRUNC=Sh; " +
+            "RPAD_TRUNC=Sh\n");
+  }
 }
