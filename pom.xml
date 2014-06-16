@@ -574,12 +574,15 @@
           <name>!alt-hadoop</name>
         </property>
       </activation>
+      <properties>
+        <apache.hadoop.version>1.2.1</apache.hadoop.version>
+      </properties>
       <dependencyManagement>
         <dependencies>
           <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-core</artifactId>
-            <version>1.2.1</version>
+            <version>${apache.hadoop.version}</version>
             <exclusions>
               <exclusion>
                   <groupId>org.mortbay.jetty</groupId>
@@ -672,6 +675,8 @@
       <properties>
         <alt-hadoop>mapr</alt-hadoop>
         <rat.excludeSubprojects>true</rat.excludeSubprojects>
+        <mapr.hadoop.version>1.0.3-mapr-3.0.2</mapr.hadoop.version>
+        <mapr.hbase.version>0.94.13-mapr-1401-m7-3.0.2</mapr.hbase.version>
       </properties>
       <dependencyManagement>
         <dependencies>
@@ -688,7 +693,7 @@
           <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase</artifactId>
-            <version>0.94.13-mapr-1401-m7-3.0.2</version>
+            <version>${mapr.hbase.version}</version>
             <exclusions>
               <exclusion>
                 <groupId>commons-logging</groupId>
@@ -699,7 +704,7 @@
           <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-core</artifactId>
-            <version>1.0.3-mapr-3.0.2</version>
+            <version>${mapr.hadoop.version}</version>
             <exclusions>
               <exclusion>
                   <groupId>org.mortbay.jetty</groupId>
@@ -808,13 +813,14 @@
       <id>cdh</id>
       <properties>
         <alt-hadoop>cdh4</alt-hadoop>
+        <cdh.hadoop.version>2.0.0-cdh4.4.0</cdh.hadoop.version>
       </properties>
       <dependencyManagement>
         <dependencies>
           <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.0.0-cdh4.4.0</version>
+            <version>${cdh.hadoop.version}</version>
             <exclusions>
               <exclusion>
                 <artifactId>commons-logging</artifactId>
@@ -843,13 +849,14 @@
       <id>hdp</id>
       <properties>
         <alt-hadoop>hdp</alt-hadoop>
+        <hdp.hadoop.version>2.1.0.2.0.5.0-67</hdp.hadoop.version>
       </properties>
       <dependencyManagement>
         <dependencies>
           <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.1.0.2.0.5.0-67</version>
+            <version>${hdp.hadoop.version}</version>
             <exclusions>
               <exclusion>
                 <artifactId>commons-logging</artifactId>
