@@ -99,6 +99,17 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
+    <repository>
+      <id>mapr-drill-optiq-releases</id>
+      <name>MapR Drill Optiq Releases</name>
+      <url>http://repository.mapr.com/nexus/content/repositories/drill</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
 
 
     <repository>
