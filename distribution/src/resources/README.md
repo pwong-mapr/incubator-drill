@@ -23,7 +23,7 @@ Additional requirements when running in clustered mode:
 ## Running in clustered mode
 
   1. Edit drill-override.conf to provide zookeeper location
-  2. Start the drillbit using bin/drillbit.sh start
+  2. Start the drillbit using bin/drillbit start
   3. Repeat on other nodes
   4. Connect with sqlline by using bin/sqlline -u "jdbc:drill:zk=[zk_host:port]"
   5. Run a query (below).

@@ -32,8 +32,8 @@
 #
 # Modelled after $HADOOP_HOME/bin/hadoop-daemon.sh
 
-usage="Usage: drillbit.sh [--config <conf-dir>]\
- (start|stop|status|restart|autorestart)"
+usage="Usage: drillbit [--config <conf-dir>]\
+ (start|stop|restart|autorestart)"
 
 # if no args specified, show usage
 if [ $# -lt 1 ]; then
@@ -47,7 +47,7 @@ bin=`cd "$bin">/dev/null; pwd`
 . "$bin"/drill-config.sh
 
 # get arguments
-startStopStatus=$1
+startStop=$1
 shift
 
 command=drillbit
@@ -152,7 +152,7 @@ loglog="${DRILL_LOG_DIR}/${DRILL_LOGFILE}"
 logout="${DRILL_LOG_DIR}/${DRILL_OUTFILE}"
 pid=$DRILL_PID_DIR/drillbit.pid
 
-export DRILLBIT_LOG_PATH=$loglog
+DRILL_JAVA_OPTS="$DRILL_JAVA_OPTS -Dlog.path=$loglog"
 
 if [ -n "$SERVER_GC_OPTS" ]; then
   export SERVER_GC_OPTS=${SERVER_GC_OPTS/"-Xloggc:<FILE-PATH>"/"-Xloggc:${loggc}"}
@@ -169,7 +169,7 @@ fi
 thiscmd=$0
 args=$@
 
-case $startStopStatus in
+case $startStop in
 
 (start)
     check_before_start
@@ -222,23 +222,6 @@ case $startStopStatus in
     $thiscmd --config "${DRILL_CONF_DIR}" start $command $args &
     wait_until_done $!
   ;;
-
-(status)
-
-    if [ -f $pid ]; then
-      TARGET_PID=`cat $pid`
-      if kill -0 $TARGET_PID > /dev/null 2>&1; then
-        echo $command is running.
-        exit 0
-      else
-        echo $pid file is present but $command not running.
-        exit 1
-      fi
-    else
-      echo $command not running.
-      exit 2
-    fi
-    ;;
 
 (*)
   echo $usage

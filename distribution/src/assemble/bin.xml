@@ -228,7 +228,7 @@
       <outputDirectory>bin</outputDirectory>
     </file>
     <file>
-      <source>src/resources/drillbit.sh</source>
+      <source>src/resources/drillbit</source>
       <fileMode>0755</fileMode>
       <outputDirectory>bin</outputDirectory>
     </file>
