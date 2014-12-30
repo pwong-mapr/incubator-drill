@@ -184,6 +184,15 @@
       <scope>test</scope>
     </dependencySet>
 
+    <dependencySet>
+      <outputDirectory>winutils/bin</outputDirectory>
+      <unpack>true</unpack>
+      <useProjectArtifact>false</useProjectArtifact>
+      <includes>
+        <include>org.apache.hadoop:hadoop-winutils</include>
+      </includes>
+    </dependencySet>
+
   </dependencySets>
 
   <fileSets>
