@@ -135,6 +135,8 @@ if "test%HADOOP_HOME%" == "test" (
   set USE_HADOOP_CP=1
 )
 
+set HADOOP_CLASSPATH=%DRILL_HOME%\winutils;%HADOOP_CLASSPATH%
+
 rem ----
 rem Deal with HBase JARs, if HBASE_HOME was specified
 rem ----
